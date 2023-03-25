@@ -5,12 +5,9 @@ import { ChangeTheme } from './Change-theme'
 export class CardsRikyMorty extends React.Component {
 	static contextType = FetchContext
 
+	// eslint-disable-next-line no-useless-constructor
 	constructor(props) {
 		super(props)
-
-		this.state = {
-			counter: 1,
-		}
 	}
 
 	Prev = () => {
