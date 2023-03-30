@@ -19,7 +19,7 @@ export class FetchProvider extends React.Component {
 
 
 	dataRequest = page => {
-		fetch(page)
+		fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
 			.then(resp => resp.json())
 			.then(res => {
 				this.setState({

@@ -28,8 +28,8 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 250%;
-  height: 37px;
+  width: 900px;
+  height: 30px;
   padding-left: 20px;
   padding-right: 20px;
   color: black;
@@ -66,4 +66,12 @@ button:hover {
 
 .dark {
   background: rgb(60, 60, 60);
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 27px;
 }

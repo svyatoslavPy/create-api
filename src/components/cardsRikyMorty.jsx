@@ -11,11 +11,27 @@ export class CardsRikyMorty extends React.Component {
 	}
 
 	Prev = () => {
-		this.context.dataRequest(this.context.data.info.prev)
+		let nextRes = String(this.context.data.info.prev)
+		let res = nextRes[nextRes.length - 1]
+		this.context.dataRequest(res)
 	}
 
 	Next = () => {
-		this.context.dataRequest(this.context.data.info.next)
+		let nextRes = String(this.context.data.info.next)
+		let res = nextRes[nextRes.length - 1]
+		this.context.dataRequest(res)
+	}
+
+	items = []
+
+	componentDidMount() {
+		for (let i = 1; i <= 5; i++) {
+			this.items.push(
+				<button onClick={(e) => this.context.dataRequest(e.target.innerText)} className='btn'>
+					{i}
+				</button>
+			)
+		}
 	}
 
 	render() {
@@ -39,6 +55,9 @@ export class CardsRikyMorty extends React.Component {
 						))}
 					<div className='data-result__btns'>
 						<button onClick={() => this.Prev()}>Prev</button>
+						{this.items.slice(0, 5).map(i => (
+							<p>{i}</p>
+						))}
 						<button onClick={() => this.Next()}>Next</button>
 					</div>
 				</div>
